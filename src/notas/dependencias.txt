@@ -1,0 +1,30 @@
+npm init -y
+npm install express -D
+npm install typescript -D
+npm install nodemon -g
+tsc --init
+npm install cors
+npm install dotenv
+
+//BASE DE DATOS ORM
+npm install --save sequelize
+
+//ESPECIFICAR BASE DE DATOS 
+# One of the following:
+$ npm install --save pg pg-hstore # Postgres
+$ npm install --save mysql2
+$ npm install --save mariadb
+$ npm install --save sqlite3
+$ npm install --save tedious # Microsoft SQL Server
+$ npm install --save oracledb # Oracle Database
+
+//
+npm install sequelize @sequelize/core
+npm install oracledb
+npm install --save-dev @types/sequelize @types/oracledb
+
+
+
+//TIPADOS 
+npm install @types/express @types/cors @types/dotenv  -D
+npm install --save-dev @types/sequelize
