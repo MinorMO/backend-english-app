@@ -9,11 +9,13 @@ const express_1 = require("express");
 const user_routes_1 = __importDefault(require("./user.routes"));
 const loginRegister_routes_1 = __importDefault(require("./loginRegister.routes"));
 const verbs_routes_1 = __importDefault(require("./verbs.routes"));
+const prueba_routes_1 = __importDefault(require("./prueba.routes"));
 const route = (0, express_1.Router)();
 //las rutas de usuario se encuentran en el archivo user.routes.ts
 route.use('/users', user_routes_1.default);
 route.use('', loginRegister_routes_1.default);
 route.use('/verb', verbs_routes_1.default);
+route.use('/prueba', prueba_routes_1.default);
 // dos middlewares o handlers de errores
 //los casos de usos retornan excepciones a traves de throw y los controladores a traves del try catch
 //van a manejarlos, en el catch se va a llamar a next con el error

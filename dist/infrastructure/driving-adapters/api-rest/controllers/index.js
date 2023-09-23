@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.insertVerbsController = exports.getAllVerbsController = exports.insertVerbController = exports.updateVerbController = exports.deleteVerbController = exports.authenticateUserController = exports.deleteUserController = exports.updateUserController = exports.createUserController = exports.getUserByIdController = exports.getAllUsersController = void 0;
+exports.pruebaController = exports.insertVerbsController = exports.getAllVerbsController = exports.insertVerbController = exports.updateVerbController = exports.deleteVerbController = exports.authenticateUserController = exports.deleteUserController = exports.updateUserController = exports.createUserController = exports.getUserByIdController = exports.getAllUsersController = void 0;
 const GetAllUser_controller_1 = require("./users/GetAllUser.controller");
 Object.defineProperty(exports, "getAllUsersController", { enumerable: true, get: function () { return GetAllUser_controller_1.getAllUsers; } });
 const GetUserById_controller_1 = require("./users/GetUserById.controller");
@@ -23,4 +23,6 @@ const GetAllVerbs_controller_1 = require("./verbs/GetAllVerbs.controller");
 Object.defineProperty(exports, "getAllVerbsController", { enumerable: true, get: function () { return GetAllVerbs_controller_1.getAllVerbs; } });
 const InsertVerbs_controller_1 = require("./verbs/InsertVerbs.controller");
 Object.defineProperty(exports, "insertVerbsController", { enumerable: true, get: function () { return InsertVerbs_controller_1.insertVerbs; } });
+const prueba_controller_1 = require("./prueba/prueba.controller");
+Object.defineProperty(exports, "pruebaController", { enumerable: true, get: function () { return prueba_controller_1.prueba; } });
 //# sourceMappingURL=index.js.map
