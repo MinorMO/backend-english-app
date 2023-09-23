@@ -17,6 +17,7 @@ export const authenticateUser = async (req: Request, res: Response, next: NextFu
 
     try {
         const token = await userAuthenticatorUseCase.authenticate(email,password)
+        console.log(token)
         res.status(200).json({token})
         return
     }catch (error) {

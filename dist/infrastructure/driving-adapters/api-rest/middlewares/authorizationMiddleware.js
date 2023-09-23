@@ -10,10 +10,12 @@ exports.authorizationMiddleware = void 0;
         next();
     }
 }*/
-const authorizationMiddleware = (requiredRole) => {
+const authorizationMiddleware = (allowedRoles) => {
     return (req, res, next) => {
         const user = res.locals.user;
-        if (!user || user.role !== requiredRole) {
+        console.log(user);
+        console.log("autorizacion");
+        if (!user || !allowedRoles.includes(user.role)) {
             return res.status(403).send({ message: 'Access denied' });
         }
         next();

@@ -12,11 +12,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.updateUser = void 0;
 const DynamoDBUserRepository_1 = require("@infrastructure/driving-adapters/implementations/Aws/dynamo-db/DynamoDBUserRepository");
 const UserUpdater_1 = require("@application/usescases/users/UserUpdater");
+const BcryptAdapter_1 = require("@infrastructure/driven-adpters/auth/BcryptAdapter");
 const updateUser = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const { name, lastName, email, password, role } = req.body;
     const UserId = req.params.id;
+    const bcryptAdapter = new BcryptAdapter_1.BcryptAdapter();
     const dynamodbUserRepo = new DynamoDBUserRepository_1.DynamoDBUserRepository();
-    const userUpdaterUseCase = new UserUpdater_1.UserUpdaterUseCase(dynamodbUserRepo);
+    const userUpdaterUseCase = new UserUpdater_1.UserUpdaterUseCase(dynamodbUserRepo, bcryptAdapter);
     try {
         const userToUpdate = {
             id: UserId,

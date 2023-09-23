@@ -17,6 +17,7 @@ const getAllUsers = (req, res, next) => __awaiter(void 0, void 0, void 0, functi
     const userGetterUseCase = new UserGetter_1.UserGetterUseCase(dynamodbUserRepo);
     try {
         const user = yield userGetterUseCase.run_GetAllUsers();
+        console.log(user);
         res.status(200).json(user);
         return;
     }

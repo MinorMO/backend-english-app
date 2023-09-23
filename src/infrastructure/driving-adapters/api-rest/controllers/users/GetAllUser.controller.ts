@@ -9,6 +9,7 @@ export const getAllUsers = async (req: Request, res: Response, next: NextFunctio
 
     try {
         const user = await userGetterUseCase.run_GetAllUsers()
+        console.log(user)
         res.status(200).json(user)
         return
     } catch (error) {

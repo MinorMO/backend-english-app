@@ -22,6 +22,7 @@ const authenticateUser = (req, res, next) => __awaiter(void 0, void 0, void 0, f
     const userAuthenticatorUseCase = new UserAuthenticator_1.UserAuthenticatorUseCase(dynamoDBUserRepo, bcryptAdapter, jwtAdapter);
     try {
         const token = yield userAuthenticatorUseCase.authenticate(email, password);
+        console.log(token);
         res.status(200).json({ token });
         return;
     }

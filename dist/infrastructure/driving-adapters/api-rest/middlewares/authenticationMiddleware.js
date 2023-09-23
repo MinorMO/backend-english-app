@@ -21,6 +21,8 @@ const JwtAdapter_1 = require("@infrastructure/driven-adpters/auth/JwtAdapter"); 
 const authenticationMiddleware = (req, res, next) => {
     var _a;
     const token = (_a = req.headers.authorization) === null || _a === void 0 ? void 0 : _a.split(' ')[1];
+    console.log(token);
+    console.log("autentificacion");
     if (!token) {
         return res.status(401).send({ message: 'Authentication required' });
     }

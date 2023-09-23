@@ -13,10 +13,10 @@ const route = Router()
 // Aplicar el middleware de autenticación a todas las rutas
 route.use(authenticationMiddleware);
 
-route.delete('/:id',authorizationMiddleware('admin'), deleteUserController)
-route.put('/:id',authorizationMiddleware('admin'), updateUserController)
-route.get('',authorizationMiddleware('admin'), getAllUsersController)
-route.get('/:id',authorizationMiddleware('admin'), getUserByIdController)
+route.delete('/:id',authorizationMiddleware(['admin']), deleteUserController)
+route.put('/:id',authorizationMiddleware(['admin']), updateUserController)
+route.get('',authorizationMiddleware(['admin', 'client']), getAllUsersController)
+route.get('/:id',authorizationMiddleware(['admin']), getUserByIdController)
 
 
 export default route

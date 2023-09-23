@@ -12,10 +12,12 @@ import {RequestWithUser} from'../../../../../typings/custom';
     }
 }*/
 
-export const authorizationMiddleware = (requiredRole:string) => {
+export const authorizationMiddleware = (allowedRoles: string[]) => {
     return (req: Request, res: Response, next: NextFunction) => {
         const user: User = res.locals.user;
-        if (!user || user.role !== requiredRole) {
+        console.log(user)
+        console.log("autorizacion")
+        if (!user || !allowedRoles.includes(user.role)) {
             return res.status(403).send({ message: 'Access denied' });
         }
         next();
