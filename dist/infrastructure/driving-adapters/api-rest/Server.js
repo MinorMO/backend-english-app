@@ -15,10 +15,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Server = void 0;
 const express_1 = __importDefault(require("express"));
 const routes_1 = __importDefault(require("./routes"));
+const cors_1 = __importDefault(require("cors"));
 class Server {
     constructor(port) {
         this._port = port;
         this._app = (0, express_1.default)();
+        this._app.use((0, cors_1.default)());
         this._app.use(express_1.default.json());
         this._app.use(express_1.default.urlencoded({ extended: false }));
         this._app.use(routes_1.default);
