@@ -9,6 +9,7 @@ import {updateVerb} from './verbs/UpdateVerb.controller'
 import {insertVerb} from './verbs/InsertVerb.controller'
 import {getAllVerbs} from './verbs/GetAllVerbs.controller'
 import {insertVerbs} from './verbs/InsertVerbs.controller'
+import { prueba } from './prueba/prueba.controller'
 
 
 
@@ -25,6 +26,7 @@ export {
     updateVerb as updateVerbController,
     insertVerb as insertVerbController,
     getAllVerbs as getAllVerbsController,
-    insertVerbs as insertVerbsController
+    insertVerbs as insertVerbsController,
+    prueba as pruebaController
 
 }

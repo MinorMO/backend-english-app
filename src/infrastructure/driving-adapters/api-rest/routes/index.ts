@@ -4,6 +4,7 @@ import {Request, Response, Router, NextFunction} from 'express'
 import userRoutes from './user.routes'
 import loginRegisterRoutes from './loginRegister.routes'
 import verbsRoutes from './verbs.routes'
+import pruebaRoutes from './prueba.routes'
 
 
 const route = Router()
@@ -11,6 +12,7 @@ const route = Router()
 route.use('/users', userRoutes)
 route.use('', loginRegisterRoutes)
 route.use('/verb', verbsRoutes)
+route.use('/prueba', pruebaRoutes)
 
 
 // dos middlewares o handlers de errores
